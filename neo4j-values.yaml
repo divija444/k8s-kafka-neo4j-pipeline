@@ -1,0 +1,24 @@
+neo4j:
+  name: neo4j-standalone
+  edition: "enterprise"
+  acceptLicenseAgreement: "yes"
+  password: "processingpipeline"
+  labs:
+    enabled: true
+    plugins:
+      - graph-data-science
+  config:
+    dbms.memory.heap.initial_size: "1G"
+    dbms.memory.heap.max_size: "2G"
+    dbms.memory.pagecache.size: "1G"
+    dbms.security.auth_enabled: "true"
+  resources:
+    requests:
+      memory: "2Gi"
+      cpu: "500m"
+    limits:
+      memory: "4Gi"
+      cpu: "2000m"
+volumes:
+  data:
+    mode: defaultStorageClass
